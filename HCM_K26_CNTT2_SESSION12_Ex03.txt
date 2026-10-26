@@ -1,0 +1,30 @@
+SESSION12
+Bài 3 : Chuẩn hóa quy trình giao vận và tra cứu giá cước
+
+Tên lớp: HCM K26 CNTT2
+Môn học: Nhập môn công nghệ thông tin
+Họ và tên: LƯƠNG THANH THƯ
+
+Phần 1. Phân tích
+Mapping 4 tham số của hàm VLOOKUP theo mô hình nhân viên kho tra hồ sơ:
+
+Tham số	        Ý nghĩa				Ví dụ thực tế
+lookup_value	Giá trị cần tìm			Mã vận đơn cần tra
+table_array	Vùng dữ liệu tra cứu		Bảng mã vận đơn và giá cước ở Sheet 2
+col_index_num	Cột trả về kết quả		Cột số 2 chứa giá cước
+range_lookup	Kiểu tìm kiếm			FALSE để tìm chính xác mã vận đơn
+
+Phần 2. Triển khai
+- Word: Soạn quy trình vận hành kho, sử dụng Heading Styles đồng bộ màu sắc thương hiệu FastMove để tài liệu dễ đọc và chuyên nghiệp.
+- Excel: Dùng hàm VLOOKUP để tự động tra giá cước từ Sheet 2 sang Sheet 1. Cố định vùng tra cứu bằng dấu $ để kéo công thức xuống 500 dòng mà không bị lệch vùng.
+Công thức mẫu:
+=IFERROR(VLOOKUP(A2,Sheet2!$A$2:$B$501,2,FALSE),"Không tìm thấy mã")
+
+- PowerPoint: Thiết kế slide hướng dẫn shipper nhận đơn với tối đa 3–4 ý chính theo Miller’s Law. Tiêu đề slide phải nêu kết luận, ví dụ: “Xác nhận đúng đơn giúp giảm sai sót giao hàng”.
+- Báo cáo KPI: Dùng biểu đồ cột (Bar Chart) thể hiện tỷ lệ giao hàng đúng hạn, số đơn giao thành công và số đơn giao trễ; làm nổi bật chỉ số cần cải thiện.
+
+Phần 3. Kiểm thử
+- Thử tra cứu các mã vận đơn hợp lệ để kiểm tra giá cước.
+- Kéo công thức xuống 500 dòng để kiểm tra vùng tra cứu có được cố định hay không.
+- Khi mã vận đơn chứa ký tự lạ hoặc không tồn tại, hàm IFERROR sẽ hiển thị thông báo “Không tìm thấy mã” thay vì lỗi #N/A.
+- Không gộp ô trong bảng dữ liệu; mỗi cột chỉ chứa một loại thông tin, có tiêu đề rõ ràng và không để dòng trống xen giữa dữ liệu.
